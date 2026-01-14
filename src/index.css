@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+  --bg-dark: #0f172a;
+  --bg-card: #1e293b;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  
+  --emerald-500: #10b981;
+  --emerald-400: #34d399;
+  --emerald-900: #064e3b;
+  
+  --red-500: #ef4444;
+  --red-400: #f87171;
+  --red-900: #7f1d1d;
+  
+  --cyan-400: #22d3ee;
+}
+
+body {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Layout */
+.dashboard-container {
+  min-height: 100vh;
+  padding: 2rem;
+  background: radial-gradient(circle at top right, #1e293b 0%, #0f172a 100%);
+}
+
+.max-width-wrapper {
+  max-width: 80rem; /* 7xl */
+  margin: 0 auto;
+}
+
+/* Header */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.header-branding {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon-wrapper {
+  background: rgba(16, 185, 129, 0.1);
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  display: flex;
+}
+
+.header-icon {
+  width: 2rem;
+  height: 2rem;
+  color: var(--emerald-400);
+}
+
+.header-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(to right, var(--emerald-400), var(--cyan-400));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header-subtitle {
+  color: var(--text-secondary);
+  margin: 0.25rem 0 0 0;
+}
+
+.header-status {
+  text-align: right;
+}
+
+.status-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.status-time {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--emerald-400);
+}
+
+/* Grid */
+.devices-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .devices-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .devices-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 1280px) {
+  .devices-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* Card */
+.device-card {
+  position: relative;
+  background: rgba(30, 41, 59, 0.5); /* Glassy card */
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  display: block;
+  backdrop-filter: blur(10px);
+}
+
+.device-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Styling variants based on status */
+.device-card.online {
+  border-color: rgba(16, 185, 129, 0.3);
+}
+.device-card.online:hover {
+  border-color: rgba(16, 185, 129, 0.6);
+  box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.2);
+}
+
+.device-card.offline {
+  border-color: rgba(239, 68, 68, 0.3);
+}
+.device-card.offline:hover {
+  border-color: rgba(239, 68, 68, 0.6);
+  box-shadow: 0 10px 30px -10px rgba(239, 68, 68, 0.2);
+}
+
+/* Icon Background */
+.card-bg-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  opacity: 0.05;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+.card-bg-icon svg {
+  width: 6rem;
+  height: 6rem;
+}
+.device-card:hover .card-bg-icon {
+  opacity: 0.15;
+}
+
+/* Card Content */
+.card-content {
+  position: relative;
+  z-index: 10;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 1rem;
+}
+
+.status-icon-wrapper {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+}
+.status-icon-wrapper.online {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--emerald-400);
+}
+.status-icon-wrapper.offline {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--red-400);
+}
+
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+}
+.status-badge.online {
+  background: rgba(16, 185, 129, 0.05);
+  color: var(--emerald-400);
+  border-color: rgba(16, 185, 129, 0.2);
+}
+.status-badge.offline {
+  background: rgba(239, 68, 68, 0.05);
+  color: var(--red-400);
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+.device-name {
+  color: var(--text-primary);
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.device-info {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.device-port {
+  color: var(--text-muted);
+}

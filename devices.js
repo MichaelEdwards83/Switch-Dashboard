@@ -1,0 +1,23 @@
+export const devices = [
+    { name: 'pfsense', ip: '172.31.29.1', port: 80, url: 'http://172.31.29.1/' },
+    { name: 'SW-GRN-CORE-RED', ip: '172.31.29.2', port: 49151, url: 'http://172.31.29.2:49151/' },
+    { name: 'SW-GRN-ENG-BCAST-C', ip: '172.31.29.3', port: 49151, url: 'http://172.31.29.3:49151/' },
+    { name: 'SW-GRN-ENG-BCAST-A', ip: '172.31.29.4', port: 49151, url: 'http://172.31.29.4:49151/' },
+    { name: 'SW-GRN-ENG-SCREENS-1G', ip: '172.31.29.5', port: 49151, url: 'http://172.31.29.5:49151/' },
+    { name: 'SW-GRN-ENG-SCREENS-10G', ip: '172.31.29.19', port: 49151, url: 'http://172.31.29.19:49151/' },
+    { name: 'SW-GRN-ENG-LED', ip: '172.31.29.6', port: 49151, url: 'http://172.31.29.6:49151/' },
+    { name: 'SW-GRN-ENG-GFX_A', ip: '172.31.29.7', port: 49151, url: 'http://172.31.29.7:49151/' },
+    { name: 'SW-GRN-ENG-RECORDS', ip: '172.31.29.8', port: 49151, url: 'http://172.31.29.8:49151/' },
+    { name: 'SW-GRN-ENG-DSM', ip: '172.31.29.9', port: 49151, url: 'http://172.31.29.9:49151/' },
+    { name: 'SW-GRN-ENG-FOH', ip: '172.31.29.10', port: 49151, url: 'http://172.31.29.10:49151/' },
+    { name: 'SW-GRN-OP-SCREENS', ip: '172.31.29.11', port: 49151, url: 'http://172.31.29.11:49151/' },
+    { name: 'SW-GRN-OP-PLAYBACK', ip: '172.31.29.12', port: 49151, url: 'http://172.31.29.12:49151/' },
+    { name: 'SW-GRN-OP-SWR_TD', ip: '172.31.29.13', port: 49151, url: 'http://172.31.29.13:49151/' },
+    { name: 'SW-GRN-OP-CAM_CTRL', ip: '172.31.29.14', port: 49151, url: 'http://172.31.29.14:49151/' },
+    { name: 'SW-GRN-OP-RECORDS', ip: '172.31.29.15', port: 49151, url: 'http://172.31.29.15:49151/' },
+    { name: 'SW-GRN-OP-EIC_COB', ip: '172.31.29.16', port: 49151, url: 'http://172.31.29.16:49151/' },
+    { name: 'SW-GRN-OP-TECH_PROD', ip: '172.31.29.17', port: 49151, url: 'http://172.31.29.17:49151/' },
+    { name: 'SW-GRN-SPARE', ip: '172.31.29.18', port: 49151, url: 'http://172.31.29.18:49151/' },
+    { name: 'SW-PROJECTION', ip: '172.31.29.22', port: 49151, url: 'http://172.31.29.22:49151/' },
+    { name: 'SW-DOUGLAS', ip: '172.31.29.69', port: 49151, url: 'http://172.31.29.69:49151/' }
+];
